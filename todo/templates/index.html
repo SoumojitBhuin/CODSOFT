@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Flask To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">To-Do List</h1>
+        
+        <!-- Add new task form -->
+        <form action="/add" method="POST">
+            <input type="text" name="task" placeholder="Enter a new task" required class="task-input">
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+
+        <ul class="task-list">
+            {% for task in tasks %}
+                <li class="task-item">
+                    <form action="{{ url_for('update_task', task_id=loop.index0) }}" method="POST" class="update-form">
+                        <input type="text" name="updated_task" value="{{ task }}" required class="task-input">
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </form>
+                    <a href="{{ url_for('delete_task', task_id=loop.index0) }}" type="button" class="btn btn-danger">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
