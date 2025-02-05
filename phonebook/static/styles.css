@@ -1,0 +1,187 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #242424, #141415, #000000), #000000; /* Dark Purple-Gray Gradient */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #EDEDED; /* Light text for contrast */
+}
+
+/* Container */
+.container {
+    width: 60%;
+    margin: 50px auto;
+    background: #2E2E3E; /* Dark Gray Box */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Headings */
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #FFD700; /* Gold Accent */
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #FF6B6B; /* Vibrant Coral */
+    font-size: 20px;
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+input {
+    width: 85%; /* Increased width */
+    padding: 12px;
+    margin: 5px;
+    border: 1px solid #777;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    background: #3A3A4F; /* Darker Input Field */
+    color: #ffffff;
+}
+
+input:focus {
+    border-color: #FFD700; /* Gold Highlight */
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(255, 215, 0, 0.4);
+}
+
+/* Update & Delete Form */
+.update-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    background: #3E3E5E; /* Dark Blue-Grey */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.update-form input {
+    flex: 1;
+    min-width: 250px; /* Ensures visibility of input content */
+}
+
+/* Buttons */
+button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+/* Add Button */
+.btn-add {
+    background: linear-gradient(135deg, #38A3A5, #57CC99); /* Teal-Green */
+    color: white;
+}
+
+.btn-add:hover {
+    background: linear-gradient(135deg, #57CC99, #38A3A5);
+    transform: scale(1.05);
+}
+
+/* Update Button */
+.btn-update {
+    background: linear-gradient(135deg, #F4978E, #F47C7C); /* Warm Coral */
+    color: white;
+}
+
+.btn-update:hover {
+    background: linear-gradient(135deg, #F47C7C, #F4978E);
+    transform: scale(1.05);
+}
+
+/* Delete Button */
+.btn-delete {
+    background: linear-gradient(135deg, #FF6363, #D62D2D); /* Dark Red */
+    color: white;
+}
+
+.btn-delete:hover {
+    background: linear-gradient(135deg, #D62D2D, #FF6363);
+    transform: scale(1.05);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #181850; /* Dark Table Background */
+    color: #EDEDED;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: left;
+    font-size: 16px;
+}
+
+th {
+    background-color: #5C67F2; /* Soft Indigo */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #2E2E4E; /* Darker Shade for Rows */
+}
+
+tr:hover {
+    background-color: #3E3E5E; /* Hover Effect */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    .update-form {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
