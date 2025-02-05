@@ -1,0 +1,133 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    color: #333;
+    text-align: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centering the content container */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 3em;
+    color: #3f3d56;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2em;
+    color: #5d5d5d;
+    margin: 10px 0;
+}
+
+/* Score display */
+.score {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.score p {
+    margin: 0;
+}
+
+/* Game form styling */
+.game-form select,
+.game-form button {
+    padding: 15px 25px;
+    font-size: 1.4em;
+    border-radius: 8px;
+    border: 2px solid #6c63ff;
+    background-color: #fff;
+    cursor: pointer;
+    margin: 15px;
+    transition: all 0.3s ease;
+}
+
+.game-form select:focus,
+.game-form button:hover {
+    background-color: #6c63ff;
+    color: white;
+    border-color: #6c63ff;
+}
+
+/* Round table styling */
+.round-table {
+    width: 100%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.round-table th,
+.round-table td {
+    padding: 15px;
+    text-align: center;
+}
+
+.round-table th {
+    background-color: #6c63ff;
+    color: white;
+}
+
+.round-table tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.round-table tr:hover {
+    background-color: #e6e6e6;
+}
+
+/* Reset button styling */
+.reset-button {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 18px 35px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #ff1a1a;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 50px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #6c63ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

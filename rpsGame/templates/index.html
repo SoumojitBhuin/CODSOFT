@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock-Paper-Scissors</h1>
+        <h2>Current Score</h2>
+        <div class="score">
+            <p>User: {{ scores["user"] }} | Computer: {{ scores["computer"] }}</p>
+        </div>
+
+        <div class="game-form">
+            <h2>Choose your move:</h2>
+            <form method="POST" action="/">
+                <select name="choice" required>
+                    <option value="Rock">Rock</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Scissors">Scissors</option>
+                </select>
+                <button type="submit">Play</button>
+            </form>
+        </div>
+
+        <h2>Previous Rounds</h2>
+        {% if rounds %}
+            <table class="round-table">
+                <thead>
+                    <tr>
+                        <th>Round</th>
+                        <th>User Choice</th>
+                        <th>Computer Choice</th>
+                        <th>Winner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for round in rounds %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ round["user_choice"] }}</td>
+                        <td>{{ round["computer_choice"] }}</td>
+                        <td>{{ round["winner"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No rounds played yet!</p>
+        {% endif %}
+
+        <form method="GET" action="/reset">
+            <button type="submit" class="reset-button">End Game and Reset</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
